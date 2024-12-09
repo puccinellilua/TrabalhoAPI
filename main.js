@@ -1,12 +1,11 @@
-// main.js
 import { carregarPaises, exibirDadosPais } from './paises.js';
 import { consultarCep } from './api.js';
 
-// Carregar os países ao iniciar
+
 document.addEventListener('DOMContentLoaded', () => {
     carregarPaises();
 
-    // Ao selecionar um país, mostrar suas informações
+   
     const selectPais = document.getElementById('paisSelect');
     selectPais.addEventListener('change', (event) => {
         const sigla = event.target.value;
@@ -17,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Formulário de consulta de CEP
+ 
     const formularioCep = document.getElementById('consultaForm');
     formularioCep.addEventListener('submit', async (event) => {
         event.preventDefault();
         const cep = document.getElementById('cepInput').value.trim();
         
-        // Validar o formato do CEP (exemplo simples)
+  
         const cepRegex = /^\d{5}-\d{3}$/;
         if (!cepRegex.test(cep)) {
             alert('Por favor, insira um CEP válido no formato 00000-000.');
