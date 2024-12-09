@@ -1,4 +1,4 @@
-// api.js
+
 export async function consultarCep(cep) {
     try {
         const response = await fetch(`https://brasilapi.com.br/api/cep/v2/${cep}`);
