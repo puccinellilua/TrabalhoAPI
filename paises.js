@@ -1,16 +1,16 @@
-// paises.js
+
 export async function carregarPaises() {
     try {
         const response = await fetch('https://raw.githubusercontent.com/puccinellilua/TrabalhoAPI/main/paises.json'); // Link correto
         const data = await response.json();
         
-        //**Destructuring** - Extrair os dados relevantes de cada país
+   
         const paises = data.map(({ nome_pais, sigla }) => ({
             nome: nome_pais,
             sigla: sigla
         }));
 
-        // Preencher o select com os países
+
         const selectElement = document.getElementById('paisSelect');
         paises.forEach(pais => {
             const option = document.createElement('option');
@@ -24,8 +24,8 @@ export async function carregarPaises() {
 }
 
 export function exibirDadosPais(sigla) {
-    // Buscar os dados do país baseado na sigla
-    fetch('https://raw.githubusercontent.com/puccinellilua/TrabalhoAPI/main/paises.json')  // Link correto
+ 
+    fetch('https://raw.githubusercontent.com/puccinellilua/TrabalhoAPI/main/paises.json')  
         .then(response => response.json())
         .then(data => {
             const pais = data.find(p => p.sigla === sigla);
